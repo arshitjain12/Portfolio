@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import ADMIN_IMAGE from "../public/admin-bg.png";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdEmail, MdCall } from "react-icons/md";
+import { FaHeart } from "react-icons/fa";
 
 // ── Typing effect ──────────────────────────────────────────────
 function useTypingEffect(words, speed = 100, pause = 1500) {
@@ -397,7 +398,7 @@ const projects = [
     tech: ["React", "Tailwind CSS", "Stripe", "JWT", "MongoDB"], color: "from-violet-600 to-indigo-600", icon: "👗", link: "https://arshit-vastrika-navy.vercel.app/" },
   { title: "Wanderlust", subtitle: "Travel Booking App",
     desc: "A production-level full-stack travel stay booking platform — search, list, and review stays with complete Passport.js authentication & role-based authorization. Built on Node.js & Express backend with MongoDB for robust data management and Bootstrap for a clean, responsive UI. Real auth, real listings, real reviews.",
-    tech: ["Node.js", "MongoDB", "Bootstrap", "EJS"], color: "from-teal-600 to-green-600", icon: "🌍", link: "#" },
+    tech: ["Node.js", "MongoDB", "Bootstrap", "EJS"], color: "from-teal-600 to-green-600", icon: "🌍", link: "https://arshitwanderlust.up.railway.app/listings" },
 ];
 
 export default function Portfolio() {
@@ -887,7 +888,7 @@ that are fast, scalable, and built to last."
                     <a href={p.link} target="_blank" rel="noreferrer"
                       className="inline-flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 transition-colors mt-2 mb-3 font-semibold"  >
                         <span className="w-2 h-2 rounded-full bg-yellow-500/60" style={{ animation: "blink 1.5s step-end infinite" }} />
-                      Live Project →
+                      View Live Project →
                     </a>
                   )}
                 {p.link === "#" && (
@@ -1029,7 +1030,9 @@ that are fast, scalable, and built to last."
         <SpinningSquareRing size={50} color="rgba(249,115,22,0.07)" dur="20s"
           style={{ bottom: "10%", left: "45%", animation: "floatShape 16s ease-in-out infinite" }} />
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4" style={{ position: "relative", zIndex: 1 }}>
-          <p className="text-gray-500 text-sm">Arshit Jain  portfolio @2026</p>
+         <p className="text-gray-500 text-sm flex items-center gap-1">
+  Portfolio Made with <FaHeart className="text-red-500" /> By Arshit Jain   ©2026
+</p>
           <div className="flex gap-6">
 <a 
   href="https://github.com/arshitjain12"  
