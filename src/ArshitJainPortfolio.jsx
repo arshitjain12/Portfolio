@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdEmail, MdCall } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 
-// ── Typing effect ──────────────────────────────────────────────
+
 function useTypingEffect(words, speed = 100, pause = 1500) {
   const [displayed, setDisplayed] = useState("");
   const [wordIdx, setWordIdx] = useState(0);
@@ -23,7 +23,7 @@ function useTypingEffect(words, speed = 100, pause = 1500) {
   return displayed;
 }
 
-// ── Intersection observer ─────────────────────────────────────
+
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
@@ -38,7 +38,7 @@ function useInView(threshold = 0.15) {
   return [ref, inView];
 }
 
-// ── Animated split-text ────────────────────────────────────────
+
 function SplitText({ text, inView, delay = 0, className = "" }) {
   return (
     <span className={className}>
@@ -55,7 +55,7 @@ function SplitText({ text, inView, delay = 0, className = "" }) {
   );
 }
 
-// ── Animated paragraph ─────────────────────────────────────────
+
 function AnimatedParagraph({ text, inView, delay = 0, className = "" }) {
   return (
     <p className={className}>
@@ -71,7 +71,7 @@ function AnimatedParagraph({ text, inView, delay = 0, className = "" }) {
   );
 }
 
-// ── Counter animation ──────────────────────────────────────────
+
 function CountUp({ end, suffix = "", inView }) {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -88,7 +88,7 @@ function CountUp({ end, suffix = "", inView }) {
   return <span>{count}{suffix}</span>;
 }
 
-// ── 3D Tilt card ───────────────────────────────────────────────
+
 function TiltCard({ children, className = "" }) {
   const ref = useRef(null);
   const onMove = (e) => {
@@ -114,7 +114,7 @@ function TiltCard({ children, className = "" }) {
   );
 }
 
-// ── Floating Particles ─────────────────────────────────────────
+
 function Particles() {
   const particles = Array.from({ length: 22 }, (_, i) => ({
     id: i, x: Math.random() * 100, y: Math.random() * 100,
@@ -132,9 +132,7 @@ function Particles() {
   );
 }
 
-// ── NEW: Floating Geometric Shapes ─────────────────────────────
-// Renders SVG triangles, diamonds, hexagons, squares, crosses that
-// slowly drift, rotate, and pulse in the background
+
 function FloatingShapes({ count = 10, color = "rgba(249,115,22,0.12)", section = "default" }) {
   const seed = section.charCodeAt(0);
   const shapes = Array.from({ length: count }, (_, i) => {
@@ -223,8 +221,7 @@ function FloatingShapes({ count = 10, color = "rgba(249,115,22,0.12)", section =
   );
 }
 
-// ── NEW: Orbital Rings Decoration ─────────────────────────────
-// 3 concentric spinning rings — used as section decoration
+
 function OrbitalRings({ size = 120, color = "rgba(249,115,22,0.2)", style = {} }) {
   return (
     <div style={{ position: "absolute", width: size, height: size, pointerEvents: "none", ...style }}>
@@ -238,7 +235,7 @@ function OrbitalRings({ size = 120, color = "rgba(249,115,22,0.2)", style = {} }
         <circle cx={size / 2} cy={size / 2} r={size / 6}
           fill="none" stroke={color} strokeWidth="1" strokeDasharray="3 3"
           style={{ animation: "spinSlow 6s linear infinite", transformOrigin: "50% 50%", transformBox: "fill-box" }} />
-        {/* orbiting dot on outer ring */}
+
         <circle r="3" fill={color} style={{ animation: `orbitDot ${8}s linear infinite`, transformOrigin: "50% 50%", transformBox: "fill-box" }}>
           <animateMotion dur="8s" repeatCount="indefinite">
             <mpath href="#outerPath" />
@@ -250,7 +247,7 @@ function OrbitalRings({ size = 120, color = "rgba(249,115,22,0.2)", style = {} }
   );
 }
 
-// ── NEW: Constellation (connected dots) ────────────────────────
+
 function Constellation({ width = 300, height = 200, dotCount = 8, color = "rgba(249,115,22,0.25)" }) {
   const dots = useRef(Array.from({ length: dotCount }, (_, i) => ({
     id: i, x: (i * 37 + 40) % (width - 40) + 20, y: (i * 59 + 30) % (height - 40) + 20,
@@ -304,7 +301,7 @@ function Constellation({ width = 300, height = 200, dotCount = 8, color = "rgba(
   );
 }
 
-// ── NEW: Morphing Blob ─────────────────────────────────────────
+
 function MorphBlob({ size = 200, color = "rgba(249,115,22,0.06)", style = {} }) {
   return (
     <div style={{ position: "absolute", width: size, height: size, pointerEvents: "none", ...style }}>
@@ -323,7 +320,7 @@ function MorphBlob({ size = 200, color = "rgba(249,115,22,0.06)", style = {} }) 
   );
 }
 
-// ── NEW: Spinning Square Ring ──────────────────────────────────
+
 function SpinningSquareRing({ size = 80, color = "rgba(249,115,22,0.15)", dur = "10s", style = {} }) {
   return (
     <div style={{ position: "absolute", width: size, height: size, pointerEvents: "none", ...style }}>
@@ -341,7 +338,7 @@ function SpinningSquareRing({ size = 80, color = "rgba(249,115,22,0.15)", dur = 
   );
 }
 
-// ── NEW: Animated Corner Brackets ─────────────────────────────
+
 function CornerBrackets({ size = 60, color = "rgba(249,115,22,0.2)", style = {} }) {
   const s = size;
   const len = s * 0.35;
@@ -361,7 +358,7 @@ function CornerBrackets({ size = 60, color = "rgba(249,115,22,0.2)", style = {} 
   );
 }
 
-// ── NEW: DNA Helix strip ───────────────────────────────────────
+
 function DNAHelix({ height = 200, color = "rgba(249,115,22,0.18)", style = {} }) {
   const width = 40;
   const steps = 10;
@@ -389,16 +386,39 @@ function DNAHelix({ height = 200, color = "rgba(249,115,22,0.18)", style = {} })
 
 const skills = ["HTML5", "CSS3", "JavaScript", "React.js", "Node.js", "Express", "MongoDB", "Tailwind", "Bootstrap", "Git", "GitHub", "REST API", "MERN Stack", "SQL"];
 
+const FOODZILA_VIDEO = "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780904608/Screen_Recording_2026-06-08_130832_clwt7h.mp4";
+
 const projects = [
-  { title: "Foodzila", subtitle: "Food Ordering App",
-    desc: "A production-grade food ordering platform built on the MERN stack  featuring JWT-based auth, real-time cart management, order tracking, cancellation flows, and user reviews. Includes a fully functional admin panel to manage foods, users & orders. Built like a real product, not a side project",
-    tech: ["React", "Node.js", "Tailwind CSS","Stripe","MongoDB", "JWT", "Express" ], color: "from-orange-600 to-red-600", icon: "🍕", link: "#" },
-  { title: "Vastrika", subtitle: "E-Commerce Website",
+  { 
+    title: "Foodzila", subtitle: "Food Ordering App",
+    desc: "A production-grade food ordering platform built on the MERN stack featuring JWT-based auth, real-time cart management, order tracking, cancellation flows, and user reviews. Includes a fully functional admin panel to manage foods, users & orders. Built like a real product, not a side project",
+    tech: ["React", "Node.js", "Tailwind CSS","Stripe","MongoDB", "JWT", "Express"],
+    color: "from-orange-600 to-red-600", icon: "🍕", 
+    link: "#",
+
+    videoUrl: "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780904608/Screen_Recording_2026-06-08_130832_clwt7h.mp4",
+    railwayDown: true // Isse Foodzila mein offline note aayega
+  },
+
+  { 
+    title: "Vastrika", subtitle: "E-Commerce Website",
     desc: "A production-level MERN e-commerce platform built for real shopping size selection, advanced filtering, category search, and dual checkout via Stripe & Cash on Delivery. Track your order with live delivery status updates. Secure JWT auth, clean UI with Tailwind CSS, and a fully managed product & order system. Ships like a real store. Works like one too.",
-    tech: ["React", "Tailwind CSS", "Stripe", "JWT", "MongoDB"], color: "from-violet-600 to-indigo-600", icon: "👗", link: "https://arshit-vastrika-navy.vercel.app/" },
-  { title: "Wanderlust", subtitle: "Travel Booking App",
+    tech: ["React", "Tailwind CSS", "Stripe", "JWT", "MongoDB"],
+    color: "from-violet-600 to-indigo-600", icon: "👗",
+    link: "https://arshit-vastrika-navy.vercel.app/",
+    
+    videoUrl: "YOUR_VASTRIKA_VIDEO_URL_HERE", 
+    railwayDown: true 
+  },
+
+  { 
+    title: "Wanderlust", subtitle: "Travel Booking App",
     desc: "A production-level full-stack travel stay booking platform — search, list, and review stays with complete Passport.js authentication & role-based authorization. Built on Node.js & Express backend with MongoDB for robust data management and Bootstrap for a clean, responsive UI. Real auth, real listings, real reviews.",
-    tech: ["Node.js", "MongoDB", "Bootstrap", "EJS"], color: "from-teal-600 to-green-600", icon: "🌍", link: "https://arshitwanderlust.up.railway.app/listings" },
+    tech: ["Node.js", "MongoDB", "Bootstrap", "EJS"],
+    color: "from-teal-600 to-green-600", icon: "🌍",
+    link: "https://arshitwanderlust.up.railway.app/listings",
+    railwayDown: true 
+  },
 ];
 
 export default function Portfolio() {
@@ -408,6 +428,7 @@ export default function Portfolio() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [cursorPos, setCursorPos] = useState({ x: -200, y: -200 });
   const [cursorVisible, setCursorVisible] = useState(false);
+  const [activeVideo, setActiveVideo] = useState(null);
 
   const title = useTypingEffect(["MERN Stack Developer", "NODE Developer", "React Developer"]);
 
@@ -447,7 +468,7 @@ export default function Portfolio() {
   return (
     <div className="bg-gray-950 text-white min-h-screen overflow-x-hidden" style={{ fontFamily: "'Segoe UI', sans-serif" }}>
 
-      {/* ── Custom cursor glow ── */}
+ 
       <div style={{ position: "fixed", pointerEvents: "none", zIndex: 9999,
         left: cursorPos.x - 16, top: cursorPos.y - 16, width: 32, height: 32, borderRadius: "50%",
         background: "radial-gradient(circle, rgba(249,115,22,0.35) 0%, transparent 70%)",
@@ -457,12 +478,12 @@ export default function Portfolio() {
         background: "#f97316", opacity: cursorVisible ? 0.8 : 0,
         transition: "left 0.05s linear, top 0.05s linear, opacity 0.3s ease" }} />
 
-      {/* ── Scroll progress bar ── */}
+     
       <div style={{ position: "fixed", top: 0, left: 0, height: 3, zIndex: 60,
         background: "linear-gradient(90deg, #f97316, #ef4444)", width: `${scrollProgress}%`,
         transition: "width 0.1s linear", boxShadow: "0 0 8px rgba(249,115,22,0.6)" }} />
 
-      {/* ── NAVBAR ── */}
+   
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-950/95 backdrop-blur-md shadow-lg shadow-orange-500/10" : "bg-transparent"}`}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <span className="text-2xl font-bold text-orange-500 tracking-wider cursor-pointer"
@@ -496,11 +517,9 @@ export default function Portfolio() {
         )}
       </nav>
 
-      {/* ══════════════════════════════════════════════
-          ── HERO SECTION ──────────────────────────────
-          ══════════════════════════════════════════════ */}
+ 
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-        {/* Background blobs + grid */}
+       
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-[600px] h-[600px] rounded-full bg-orange-600/8 blur-3xl -top-32 -left-32" style={{ animation: "pulse 6s ease-in-out infinite" }} />
           <div className="absolute w-[500px] h-[500px] rounded-full bg-red-600/8 blur-3xl bottom-0 right-0" style={{ animation: "pulse 6s ease-in-out 2s infinite" }} />
@@ -511,30 +530,29 @@ export default function Portfolio() {
           }} />
           <Particles />
 
-          {/* ★ NEW: Floating geometric shapes in hero background */}
+        
           <FloatingShapes count={14} color="rgba(249,115,22,0.14)" section="hero" />
 
-          {/* ★ NEW: Corner brackets (top-right area) */}
           <CornerBrackets size={90} color="rgba(249,115,22,0.18)"
             style={{ top: "15%", right: "8%", animation: "pulseBracket 4s ease-in-out infinite" }} />
           <CornerBrackets size={55} color="rgba(249,115,22,0.12)"
             style={{ top: "60%", left: "4%", animation: "pulseBracket 5s ease-in-out 1s infinite" }} />
 
-          {/* ★ NEW: Spinning square rings floating in hero */}
+        
           <SpinningSquareRing size={70} color="rgba(249,115,22,0.13)" dur="14s"
             style={{ top: "20%", left: "12%", animation: "floatShape 9s 0s ease-in-out infinite" }} />
           <SpinningSquareRing size={45} color="rgba(249,115,22,0.1)" dur="9s"
             style={{ bottom: "25%", right: "15%", animation: "floatShape 11s 2s ease-in-out infinite" }} />
 
-          {/* ★ NEW: Orbital rings as decoration (top-left) */}
+
           <OrbitalRings size={140} color="rgba(249,115,22,0.12)"
             style={{ top: "5%", left: "2%", opacity: 0.7 }} />
 
-          {/* ★ NEW: Morphing blob in bottom-left */}
+      
           <MorphBlob size={260} color="rgba(249,115,22,0.05)"
             style={{ bottom: "-40px", left: "-40px" }} />
 
-          {/* ★ NEW: Constellation canvas — top right */}
+ 
           <div style={{ position: "absolute", top: "10%", right: "5%", opacity: 0.6 }}>
             <Constellation width={220} height={160} dotCount={7} color="rgba(249,115,22,0.3)" />
           </div>
@@ -568,11 +586,16 @@ that are fast, scalable, and built to last."
               className="text-gray-400 leading-relaxed mb-8 max-w-md" />
             <div className="flex flex-wrap gap-4"
               style={{ opacity: heroIn ? 1 : 0, transform: heroIn ? "translateY(0)" : "translateY(20px)", transition: "all 0.7s ease 1.3s" }}>
-              <button onClick={() => scrollTo("projects")}
+              <but  ton onClick={() => scrollTo("projects")}
                 className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 relative overflow-hidden group">
                 <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
                 View Projects
-              </button>
+              </but>
+              <a href="/Arshit_Jain_Resume_ATS_Optimized_atsb.pdf" download="Arshit_Jain_Resume.pdf"
+                className="px-8 py-3 bg-white/10 hover:bg-orange-500 text-white font-semibold rounded-full border border-orange-500/50 hover:border-orange-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 flex items-center gap-2 group">
+                <span className="group-hover:-translate-y-1 transition-transform duration-300">📄</span> 
+                Get Resume
+              </a>
               <button onClick={() => scrollTo("contact")}
                 className="px-8 py-3 border border-orange-500 text-orange-400 hover:bg-orange-500/10 font-semibold rounded-full transition-all duration-200 hover:scale-105">
                 Contact Me
@@ -596,7 +619,7 @@ that are fast, scalable, and built to last."
             </div>
           </div>
 
-          {/* Profile image with rings */}
+     
           <div className="flex justify-center md:justify-end mt-16 md:mt-0"
             style={{ opacity: heroIn ? 1 : 0, transform: heroIn ? "scale(1)" : "scale(0.8)", transition: "all 0.8s ease 0.4s" }}>
             <div className="relative">
@@ -610,10 +633,10 @@ that are fast, scalable, and built to last."
                   style={{ animation: "spin 12s linear infinite" }} />
                 <div className="absolute inset-[-50px] md:inset-[-65px] rounded-full border border-dotted border-orange-500/20"
                   style={{ animation: "spin 18s linear reverse infinite" }} />
-                {/* ★ NEW extra outer rings */}
+               
                 <div className="absolute inset-[-75px] md:inset-[-95px] rounded-full border border-dashed border-orange-500/10"
                   style={{ animation: "spin 25s linear infinite" }} />
-                {/* ★ NEW: small orbiting dot on outermost ring */}
+               
                 <div className="absolute" style={{
                   width: 8, height: 8, borderRadius: "50%", background: "#f97316",
                   boxShadow: "0 0 10px rgba(249,115,22,0.8)",
@@ -631,7 +654,7 @@ that are fast, scalable, and built to last."
         </div>
       </section>
 
-      {/* ── SKILLS TICKER ── */}
+     
       <div className="bg-gray-900/80 border-y border-gray-800 py-4 overflow-hidden relative">
         {/* ★ NEW: subtle floating shapes in ticker band */}
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
@@ -654,7 +677,7 @@ that are fast, scalable, and built to last."
 
       {/* ── STATS BAR ── */}
       <div ref={statsRef} className="bg-gray-900/50 border-b border-gray-800 py-10 relative overflow-hidden">
-        {/* ★ NEW: spinning square rings as bg decoration in stats */}
+       
         <SpinningSquareRing size={60} color="rgba(249,115,22,0.08)" dur="18s"
           style={{ top: "10%", left: "2%", animation: "floatShape 12s ease-in-out infinite" }} />
         <SpinningSquareRing size={50} color="rgba(249,115,22,0.08)" dur="14s"
@@ -677,29 +700,27 @@ that are fast, scalable, and built to last."
         </div>
       </div>
 
-      {/* ══════════════════════════════════════════════
-          ── ABOUT SECTION ─────────────────────────────
-          ══════════════════════════════════════════════ */}
+    
       <section id="about" className="py-24 relative overflow-hidden">
         <div className="absolute right-0 top-0 w-80 h-80 bg-orange-600/5 rounded-full blur-3xl" />
         <div className="absolute left-0 bottom-0 w-64 h-64 bg-red-600/5 rounded-full blur-3xl" />
 
-        {/* ★ NEW: floating shapes in about */}
+   
         <FloatingShapes count={10} color="rgba(249,115,22,0.1)" section="about" />
 
-        {/* ★ NEW: Orbital rings — top right corner */}
+      
         <OrbitalRings size={160} color="rgba(249,115,22,0.1)"
           style={{ top: "-20px", right: "3%", opacity: 0.6 }} />
 
-        {/* ★ NEW: DNA helix — left edge */}
+      
         <DNAHelix height={250} color="rgba(249,115,22,0.2)"
           style={{ top: "20%", left: "1%" }} />
 
-        {/* ★ NEW: Spinning square ring — bottom right */}
+  
         <SpinningSquareRing size={90} color="rgba(249,115,22,0.1)" dur="16s"
           style={{ bottom: "8%", right: "8%", animation: "floatShape 13s ease-in-out infinite" }} />
 
-        {/* ★ NEW: Morphing blob — top left */}
+      
         <MorphBlob size={300} color="rgba(249,115,22,0.04)"
           style={{ top: "-50px", left: "-60px" }} />
 
@@ -741,7 +762,7 @@ that are fast, scalable, and built to last."
                 ))}
               </div>
 
-              {/* Education timeline */}
+       
               <div className="mt-8"
                 style={{ opacity: aboutIn ? 1 : 0, transform: aboutIn ? "translateX(0)" : "translateX(-30px)", transition: "all 0.7s ease 1.3s" }}>
                 <p className="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">Education Timeline</p>
@@ -763,7 +784,7 @@ that are fast, scalable, and built to last."
               </div>
             </div>
 
-            {/* Skills side */}
+       
             <div ref={skillsRef}>
               <p className="text-gray-400 text-sm uppercase tracking-widest mb-6"
                 style={{ opacity: skillsIn ? 1 : 0, transition: "opacity 0.5s ease 0.1s" }}>
@@ -817,31 +838,29 @@ that are fast, scalable, and built to last."
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          ── PROJECTS SECTION ──────────────────────────
-          ══════════════════════════════════════════════ */}
+
       <section id="projects" className="py-24 bg-gray-900/40 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl -translate-x-1/2" />
 
-        {/* ★ NEW: floating shapes in projects */}
+    
         <FloatingShapes count={12} color="rgba(249,115,22,0.1)" section="projects" />
 
-        {/* ★ NEW: Spinning square rings — corners */}
+
         <SpinningSquareRing size={100} color="rgba(249,115,22,0.09)" dur="20s"
           style={{ top: "5%", left: "1%", animation: "floatShape 15s ease-in-out infinite" }} />
         <SpinningSquareRing size={70} color="rgba(249,115,22,0.08)" dur="13s"
           style={{ bottom: "5%", right: "2%", animation: "floatShape 12s 4s ease-in-out infinite" }} />
 
-        {/* ★ NEW: Orbital rings mid-right */}
+       
         <OrbitalRings size={130} color="rgba(249,115,22,0.09)"
           style={{ top: "30%", right: "0%", opacity: 0.5 }} />
 
-        {/* ★ NEW: Constellation — bottom left */}
+        
         <div style={{ position: "absolute", bottom: "5%", left: "2%", opacity: 0.4 }}>
           <Constellation width={200} height={140} dotCount={6} color="rgba(249,115,22,0.4)" />
         </div>
 
-        {/* ★ NEW: Corner brackets floating */}
+      
         <CornerBrackets size={75} color="rgba(249,115,22,0.15)"
           style={{ top: "15%", right: "10%" }} />
 
@@ -884,19 +903,48 @@ that are fast, scalable, and built to last."
                       </span>
                     ))}
                   </div>
-                     {p.link !== "#" && (
-                    <a href={p.link} target="_blank" rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 transition-colors mt-2 mb-3 font-semibold"  >
-                        <span className="w-2 h-2 rounded-full bg-yellow-500/60" style={{ animation: "blink 1.5s step-end infinite" }} />
-                      View Live Project →
-                    </a>
+                
+                  {p.videoUrl && p.link === "#" && (
+                    <div className="space-y-2 mt-2">
+                      <button
+                        onClick={() => setActiveVideo(p.videoUrl)}
+                        className="inline-flex items-center gap-2 text-xs text-orange-400 hover:text-orange-300 font-semibold transition-colors">
+                        ▶ Watch Demo Video
+                      </button>
+                      <p className="text-xs text-gray-500 flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-red-500/70 inline-block" />
+                        Backend offline - Railway free trial expired
+                      </p>
+                    </div>
                   )}
-                {p.link === "#" && (
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                     <span className="w-2 h-2 rounded-full bg-yellow-500/60" style={{ animation: "blink 1.5s step-end infinite" }} />
-                     <span className="text-xs">Coming Soon</span>
-                      </div>
-                       )}
+                  {p.link !== "#" && (
+                    <div className="space-y-2 mt-2">
+                      <a href={p.link} target="_blank" rel="noreferrer"
+                        className="inline-flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 transition-colors font-semibold">
+                        <span className="w-2 h-2 rounded-full bg-green-500/70" />
+                        View Live Project →
+                      </a>
+                      {p.videoUrl && (
+                        <button
+                          onClick={() => setActiveVideo(p.videoUrl)}
+                          className="block text-xs text-orange-400/70 hover:text-orange-300 font-semibold transition-colors">
+                          ▶ Watch Demo Video
+                        </button>
+                      )}
+                      {p.railwayDown && (
+                        <p className="text-xs text-gray-500 flex items-center gap-1">
+                          <span className="w-2 h-2 rounded-full bg-red-500/70 inline-block" />
+                          Backend offline - Railway free trial expired 
+                        </p>
+                      )}
+                    </div>
+                  )}
+                  {!p.videoUrl && !p.railwayDown && p.link === "#" && (
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
+                      <span className="w-2 h-2 rounded-full bg-yellow-500/60" style={{ animation: "blink 1.5s step-end infinite" }} />
+                      <span className="text-xs">Coming Soon</span>
+                    </div>
+                  )}
                 </div>
               </TiltCard>
             ))}
@@ -904,38 +952,36 @@ that are fast, scalable, and built to last."
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          ── CONTACT SECTION ───────────────────────────
-          ══════════════════════════════════════════════ */}
+     
       <section id="contact" className="py-24 relative overflow-hidden">
         <div className="absolute left-0 bottom-0 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl" />
 
-        {/* ★ NEW: floating shapes in contact */}
+        
         <FloatingShapes count={10} color="rgba(249,115,22,0.1)" section="contact" />
 
-        {/* ★ NEW: DNA helix — right edge */}
+      
         <DNAHelix height={220} color="rgba(249,115,22,0.18)"
           style={{ top: "15%", right: "1%" }} />
 
-        {/* ★ NEW: Morphing blob — top right */}
+       
         <MorphBlob size={280} color="rgba(249,115,22,0.04)"
           style={{ top: "-60px", right: "-60px" }} />
 
-        {/* ★ NEW: Orbital rings — bottom left */}
+      
         <OrbitalRings size={120} color="rgba(249,115,22,0.1)"
           style={{ bottom: "10%", left: "2%", opacity: 0.5 }} />
 
-        {/* ★ NEW: Corner brackets */}
+    
         <CornerBrackets size={80} color="rgba(249,115,22,0.14)"
           style={{ top: "10%", right: "6%" }} />
         <CornerBrackets size={55} color="rgba(249,115,22,0.1)"
           style={{ bottom: "15%", left: "5%" }} />
 
-        {/* ★ NEW: Spinning square ring */}
+     
         <SpinningSquareRing size={85} color="rgba(249,115,22,0.08)" dur="17s"
           style={{ top: "40%", right: "8%", animation: "floatShape 14s 1s ease-in-out infinite" }} />
 
-        {/* ★ NEW: Constellation — top left */}
+       
         <div style={{ position: "absolute", top: "8%", left: "3%", opacity: 0.45 }}>
           <Constellation width={180} height={130} dotCount={6} color="rgba(249,115,22,0.35)" />
         </div>
@@ -983,17 +1029,16 @@ that are fast, scalable, and built to last."
               </div>
             </div>
 
-            {/* Contact form */}
-            {/* Contact form - NEW */}
+           
 <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-colors"
   style={{ opacity: contactIn ? 1 : 0, transform: contactIn ? "translateX(0) scale(1)" : "translateX(40px) scale(0.95)", transition: "all 0.7s ease 0.4s" }}>
   <h3 className="text-white font-bold text-lg mb-6">Send a Message</h3>
   
-  {/* form tag add kiya hai aur action url di hai */}
+
   <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
     
-    {/* YAHAN APNI ACCESS KEY DALEIN JO EMAIL MEIN AAYI HAI */}
-    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+
+    <input type="hidden" name="access_key" value="051578b3-e74a-42ad-ac9b-954504895fcb" />
     
     <div className="group">
       <label className="text-gray-400 text-xs uppercase tracking-wider mb-1 block group-focus-within:text-orange-400 transition-colors">Name</label>
@@ -1013,7 +1058,7 @@ that are fast, scalable, and built to last."
         className="w-full bg-gray-800 border border-gray-700 focus:border-orange-500 text-white px-4 py-3 rounded-xl outline-none text-sm transition-all duration-200 resize-none focus:shadow-sm focus:shadow-orange-500/20" />
     </div>
 
-    {/* Ab ye real form submit button ban gaya hai */}
+    
     <button type="submit" className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] relative overflow-hidden group">
       <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
       Send Message ✉️
@@ -1024,7 +1069,7 @@ that are fast, scalable, and built to last."
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+    
       <footer className="border-t border-gray-800 py-8 bg-gray-950 relative overflow-hidden">
         {/* ★ NEW: subtle spinning ring in footer */}
         <SpinningSquareRing size={50} color="rgba(249,115,22,0.07)" dur="20s"
@@ -1054,8 +1099,34 @@ that are fast, scalable, and built to last."
           </div>
         </div>
       </footer>
+  
+{activeVideo && (
+  <div
+    className="fixed inset-0 z-[9998] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+    onClick={() => setActiveVideo(null)}>
+    <div
+      className="relative w-full max-w-4xl mx-4"
+      onClick={(e) => e.stopPropagation()}>
+      <button
+        onClick={() => setActiveVideo(null)}
+        className="absolute -top-10 right-0 text-white/70 hover:text-white text-sm font-medium transition-colors">
+        ✕ Close
+      </button>
+      <video
+        src={activeVideo}
+        controls
+        autoPlay
+        className="w-full rounded-2xl shadow-2xl border border-gray-700"
+        style={{ maxHeight: "80vh" }}
+      />
+      <p className="text-center text-gray-400 text-xs mt-3">
+        🔴 Live site offline — Railway free trial expired. Video shows full working demo.
+      </p>
+    </div>
+  </div>
+)}
 
-      {/* ── Global keyframes ── */}
+   
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
