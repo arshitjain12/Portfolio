@@ -386,28 +386,30 @@ function DNAHelix({ height = 200, color = "rgba(249,115,22,0.18)", style = {} })
 
 const skills = ["HTML5", "CSS3", "JavaScript", "React.js", "Node.js", "Express", "MongoDB", "Tailwind", "Bootstrap", "Git", "GitHub", "REST API", "MERN Stack", "SQL"];
 
-const FOODZILA_VIDEO = "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780904608/Screen_Recording_2026-06-08_130832_clwt7h.mp4";
+// 1. Yahan naya URL add karein
+const FOODZILA_VIDEO = "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780986043/Screen_Recording_2026-06-08_164444_bfhtcj.mp4";
+const VASTRIKA_VIDEO = "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780990152/Screen_Recording_2026-06-09_123120_y7clgu.mp4";
 
 const projects = [
   { 
     title: "Foodzila", subtitle: "Food Ordering App",
-    desc: "A production-grade food ordering platform built on the MERN stack featuring JWT-based auth, real-time cart management, order tracking, cancellation flows, and user reviews. Includes a fully functional admin panel to manage foods, users & orders. Built like a real product, not a side project",
+    desc: "A production-grade food ordering platform built on the MERN stack featuring JWT-based auth, real-time cart management, order tracking, cancellation flows, and user reviews. Includes a fully functional admin panel to manage foods, users & orders with optimized MongoDB schemas and use Mongo Atlas and Cloudinary for image ",
     tech: ["React", "Node.js", "Tailwind CSS","Stripe","MongoDB", "JWT", "Express"],
     color: "from-orange-600 to-red-600", icon: "🍕", 
     link: "#",
-
-    videoUrl: "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780904608/Screen_Recording_2026-06-08_130832_clwt7h.mp4",
-    railwayDown: true // Isse Foodzila mein offline note aayega
+    
+    
+    videoUrl: FOODZILA_VIDEO, 
+    railwayDown: true 
   },
 
-  { 
+{ 
     title: "Vastrika", subtitle: "E-Commerce Website",
-    desc: "A production-level MERN e-commerce platform built for real shopping size selection, advanced filtering, category search, and dual checkout via Stripe & Cash on Delivery. Track your order with live delivery status updates. Secure JWT auth, clean UI with Tailwind CSS, and a fully managed product & order system. Ships like a real store. Works like one too.",
+    desc: "A production-level MERN e-commerce platform built for real shopping size selection, advanced filtering,Cloudinary for image and Mongo Atlus for DB  category search, and dual checkout via Stripe & Cash on Delivery. Track your order with live delivery status updates. Secure JWT auth, clean UI with Tailwind CSS, and a fully managed product & order system. Ships like a real store. Works like one too.",
     tech: ["React", "Tailwind CSS", "Stripe", "JWT", "MongoDB"],
     color: "from-violet-600 to-indigo-600", icon: "👗",
     link: "https://arshit-vastrika-navy.vercel.app/",
-    
-    videoUrl: "YOUR_VASTRIKA_VIDEO_URL_HERE", 
+    videoUrl: VASTRIKA_VIDEO, 
     railwayDown: true 
   },
 
@@ -909,7 +911,7 @@ that are fast, scalable, and built to last."
                       <button
                         onClick={() => setActiveVideo(p.videoUrl)}
                         className="inline-flex items-center gap-2 text-xs text-orange-400 hover:text-orange-300 font-semibold transition-colors">
-                        ▶ Watch Demo Video
+                        ▶ Watch Project Video
                       </button>
                       <p className="text-xs text-gray-500 flex items-center gap-1">
                         <span className="w-2 h-2 rounded-full bg-red-500/70 inline-block" />
@@ -928,7 +930,7 @@ that are fast, scalable, and built to last."
                         <button
                           onClick={() => setActiveVideo(p.videoUrl)}
                           className="block text-xs text-orange-400/70 hover:text-orange-300 font-semibold transition-colors">
-                          ▶ Watch Demo Video
+                          ▶ Watch Project Video
                         </button>
                       )}
                       {p.railwayDown && (
