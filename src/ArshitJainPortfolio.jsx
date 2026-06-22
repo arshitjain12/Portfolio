@@ -386,7 +386,7 @@ function DNAHelix({ height = 200, color = "rgba(249,115,22,0.18)", style = {} })
 
 const skills = ["HTML5", "CSS3", "JavaScript", "React.js", "Node.js", "Express", "MongoDB", "Tailwind", "Bootstrap", "Git", "GitHub", "REST API", "MERN Stack", "SQL"];
 
-// 1. Yahan naya URL add karein
+
 const FOODZILA_VIDEO = "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780986043/Screen_Recording_2026-06-08_164444_bfhtcj.mp4";
 const VASTRIKA_VIDEO = "https://res.cloudinary.com/dbz0lez8l/video/upload/v1780990152/Screen_Recording_2026-06-09_123120_y7clgu.mp4";
 
@@ -593,7 +593,7 @@ that are fast, scalable, and built to last."
                 <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
                 View Projects
               </but>
-              <a href="/Arshit_Jain_Resume_ATS_Optimized_atsb.pdf" download="Arshit_Jain_Resume.pdf"
+              <a href="/Arshit_Jain_Resumea1.pdf" download="Arshit_Jain_Resume.pdf"
                 className="px-8 py-3 bg-white/10 hover:bg-orange-500 text-white font-semibold rounded-full border border-orange-500/50 hover:border-orange-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 flex items-center gap-2 group">
                 <span className="group-hover:-translate-y-1 transition-transform duration-300">📄</span> 
                 Get Resume
