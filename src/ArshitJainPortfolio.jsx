@@ -395,7 +395,7 @@ const projects = [
     title: "Foodzila", subtitle: "Food Ordering App",
     desc: "A production-grade food ordering platform built on the MERN stack featuring JWT-based auth, real-time cart management, order tracking, cancellation flows, and user reviews. Includes a fully functional admin panel to manage foods, users & orders with optimized MongoDB schemas and use Mongo Atlas and Cloudinary for image ",
     tech: ["React", "Node.js", "Tailwind CSS","Stripe","MongoDB", "JWT", "Express"],
-    color: "from-orange-600 to-red-600", icon: "🍕", 
+    color: "from-orange-600 to-red-600",  
     link: "#",
     
     
@@ -407,7 +407,7 @@ const projects = [
     title: "Vastrika", subtitle: "E-Commerce Website",
     desc: "A production-level MERN e-commerce platform built for real shopping size selection, advanced filtering,Cloudinary for image and Mongo Atlus for DB  category search, and dual checkout via Stripe & Cash on Delivery. Track your order with live delivery status updates. Secure JWT auth, clean UI with Tailwind CSS, and a fully managed product & order system. Ships like a real store. Works like one too.",
     tech: ["React", "Tailwind CSS", "Stripe", "JWT", "MongoDB"],
-    color: "from-violet-600 to-indigo-600", icon: "👗",
+    color: "from-violet-600 to-indigo-600",
     link: "https://arshit-vastrika-navy.vercel.app/",
     videoUrl: VASTRIKA_VIDEO, 
     railwayDown: true 
@@ -417,12 +417,29 @@ const projects = [
     title: "Wanderlust", subtitle: "Travel Booking App",
     desc: "A production-level full-stack travel stay booking platform — search, list, and review stays with complete Passport.js authentication & role-based authorization. Built on Node.js & Express backend with MongoDB for robust data management and Bootstrap for a clean, responsive UI. Real auth, real listings, real reviews.",
     tech: ["Node.js", "MongoDB", "Bootstrap", "EJS"],
-    color: "from-teal-600 to-green-600", icon: "🌍",
+    color: "from-teal-600 to-green-600", 
     link: "https://arshitwanderlust.up.railway.app/listings",
     railwayDown: true 
   },
 ];
-
+const experiences = [
+  {
+    title: "Frontend Developer Intern",
+    company: "ZecData, Indore",
+    duration: "Jan 2026 – Mar 2026",
+    desc: "Contributed to 2+ live production projects, developing React.js features that directly impacted end users. Engineered reusable UI components, reducing code duplication and improving overall code maintainability. Integrated RESTful APIs and resolved real-time production bugs, enhancing application performance.",
+    tech: ["React.js", "REST API", "Git", "MongoDB"],
+    color: "from-orange-600 to-red-600",
+  },
+  {
+    title: "Freelance MERN Stack Developer",
+    company: "Indore (Contract-Based)",
+    duration: "Apr 2026 – Jun 2026",
+    desc: "Built and modified reusable UI components, improving code maintainability and development speed. Integrated RESTful APIs and implemented frontend-backend communication for dynamic data handling. Resolved application bugs and performance issues, improving stability and user experience. Assisted in maintaining Node.js and Express.js backend modules and API endpoints.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "REST API","GitHub"],
+    color: "from-violet-600 to-indigo-600",
+  },
+];
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -440,6 +457,7 @@ export default function Portfolio() {
   const [projectsRef, projectsIn] = useInView(0.1);
   const [contactRef, contactIn] = useInView(0.1);
   const [statsRef, statsIn] = useInView(0.3);
+  const [experienceRef, experienceIn] = useInView(0.1);
 
   useEffect(() => {
     const onScroll = () => {
@@ -465,7 +483,7 @@ export default function Portfolio() {
     setActiveSection(id);
   };
 
-  const navItems = ["home", "about", "projects", "contact"];
+  const navItems = ["home", "about", "experience", "projects", "contact"];
 
   return (
     <div className="bg-gray-950 text-white min-h-screen overflow-x-hidden" style={{ fontFamily: "'Segoe UI', sans-serif" }}>
@@ -588,11 +606,11 @@ that are fast, scalable, and built to last."
               className="text-gray-400 leading-relaxed mb-8 max-w-md" />
             <div className="flex flex-wrap gap-4"
               style={{ opacity: heroIn ? 1 : 0, transform: heroIn ? "translateY(0)" : "translateY(20px)", transition: "all 0.7s ease 1.3s" }}>
-              <but  ton onClick={() => scrollTo("projects")}
+              <button onClick={() => scrollTo("projects")}
                 className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 relative overflow-hidden group">
                 <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
                 View Projects
-              </but>
+              </button>
               <a href="/Arshit_Jain_Resumea1.pdf" download="Arshit_Jain_Resume.pdf"
                 className="px-8 py-3 bg-white/10 hover:bg-orange-500 text-white font-semibold rounded-full border border-orange-500/50 hover:border-orange-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 flex items-center gap-2 group">
                 <span className="group-hover:-translate-y-1 transition-transform duration-300">📄</span> 
@@ -740,14 +758,14 @@ that are fast, scalable, and built to last."
 
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <AnimatedParagraph
-                text="I Am MERN Stack Developer with hands-on experience in building full-stack web applications. I've completed a 2-month internship at Zecdata where I developed responsive UI components and RESTful APIs."
-                inView={aboutIn} delay={200}
-                className="text-gray-300 leading-relaxed mb-6 text-lg" />
-              <AnimatedParagraph
-                text="I'm experienced with AI-assisted tools like ChatGPT and Copilot, and I'm passionate about creating scalable solutions. I hold a Full Stack Web Developer certification from Apna College (2025)."
-                inView={aboutIn} delay={600}
-                className="text-gray-300 leading-relaxed mb-8" />
+           <AnimatedParagraph
+             text="I am a self-taught MERN Stack Developer who builds scalable, production-ready web applications using MongoDB, Express.js, React.js, and Node.js. I have worked as a Frontend Developer Intern at ZecData and as a Freelance Developer, contributing to live projects."
+             inView={aboutIn} delay={200}
+             className="text-gray-300 leading-relaxed mb-6 text-lg" />
+            <AnimatedParagraph
+             text="I enjoy taking projects from database design to deployment  building reusable components, integrating REST APIs, and implementing JWT authentication with Docker and CI/CD on Vercel and Railway. I hold a Full Stack Web Development certification from Apna College."
+             inView={aboutIn} delay={600}
+              className="text-gray-300 leading-relaxed mb-8" />
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Location", value: "Bhopal, M.P." },
@@ -797,7 +815,7 @@ that are fast, scalable, and built to last."
                   { cat: "Frontend", skills: ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Bootstrap", "Material UI"] },
                   { cat: "Backend", skills: ["Node.js", "Express.js", "REST APIs"] },
                   { cat: "Database", skills: ["MongoDB", "SQL"] },
-                  { cat: "Tools", skills: ["Git", "GitHub", "ChatGPT", "Copilot"] },
+                  { cat: "Tools", skills: ["Git", "GitHub", "Docker", "CI/CD","Redux"] },
                 ].map((group, gi) => (
                   <div key={group.cat}
                     style={{ opacity: skillsIn ? 1 : 0, transform: skillsIn ? "translateX(0)" : "translateX(50px)", transition: `all 0.6s ease ${gi * 180}ms` }}>
@@ -836,6 +854,67 @@ that are fast, scalable, and built to last."
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── EXPERIENCE SECTION ── */}
+      <section id="experience" className="py-24 relative overflow-hidden">
+        <div className="absolute right-0 top-0 w-80 h-80 bg-orange-600/5 rounded-full blur-3xl" />
+        <div className="absolute left-0 bottom-0 w-64 h-64 bg-red-600/5 rounded-full blur-3xl" />
+
+        <FloatingShapes count={10} color="rgba(249,115,22,0.1)" section="experience" />
+        <OrbitalRings size={150} color="rgba(249,115,22,0.1)"
+          style={{ top: "-20px", right: "4%", opacity: 0.6 }} />
+        <SpinningSquareRing size={80} color="rgba(249,115,22,0.09)" dur="16s"
+          style={{ bottom: "10%", left: "5%", animation: "floatShape 13s ease-in-out infinite" }} />
+        <div style={{ position: "absolute", top: "10%", left: "2%", opacity: 0.4 }}>
+          <Constellation width={200} height={140} dotCount={6} color="rgba(249,115,22,0.35)" />
+        </div>
+
+        <div ref={experienceRef} className="max-w-6xl mx-auto px-6"
+          style={{ position: "relative", zIndex: 1 }}>
+          <div className="flex items-center gap-4 mb-4">
+            <h2 className="text-4xl font-black text-white">
+              <SplitText text="Work" inView={experienceIn} delay={0} />
+              {" "}
+              <SplitText text="Experience" inView={experienceIn} delay={250} className="text-orange-500" />
+            </h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-orange-500/50 to-transparent"
+              style={{ transform: experienceIn ? "scaleX(1)" : "scaleX(0)", transformOrigin: "left", transition: "transform 1s ease 0.5s" }} />
+          </div>
+          <p className="text-gray-400 mb-12 ml-1"
+            style={{ opacity: experienceIn ? 1 : 0, transition: "opacity 0.5s ease 0.7s" }}>
+            Real teams, real deadlines, real code shipped to production.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {experiences.map((exp, i) => (
+              <TiltCard key={exp.title}
+                className={`group relative bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-orange-500/50 transition-all duration-500 ${experienceIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}
+                style={{ transitionDelay: `${i * 180}ms` }}>
+                <div className={`h-1 w-full bg-gradient-to-r ${exp.color}`}
+                  style={{ transform: experienceIn ? "scaleX(1)" : "scaleX(0)", transformOrigin: "left", transition: `transform 0.7s ease ${i * 180 + 400}ms` }} />
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="text-3xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">{exp.icon}</span>
+                    <span className="text-xs text-gray-500 border border-gray-700 rounded-full px-3 py-1 group-hover:border-orange-500/40 transition-colors">{exp.duration}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-orange-400 transition-colors duration-200">{exp.title}</h3>
+                  <p className="text-orange-400/80 text-xs font-semibold uppercase tracking-wider mb-3">{exp.company}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-4">{exp.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.tech.map((t, ti) => (
+                      <span key={t}
+                        className="text-xs text-orange-300 bg-orange-500/10 px-2 py-0.5 rounded hover:bg-orange-500/20 transition-colors"
+                        style={{ opacity: experienceIn ? 1 : 0, transform: experienceIn ? "scale(1)" : "scale(0)", transition: `all 0.3s ease ${i * 180 + ti * 60 + 600}ms` }}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </TiltCard>
+            ))}
           </div>
         </div>
       </section>
