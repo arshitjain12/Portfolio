@@ -611,7 +611,7 @@ that are fast, scalable, and built to last."
                 <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
                 View Projects
               </button>
-              <a href="/Arshit_Jain_Resumea1.pdf" download="Arshit_Jain_Resume.pdf"
+              <a href="/Arshit_Jain_Resume-b.pdf" download="Arshit_Jain_Resume.pdf"
                 className="px-8 py-3 bg-white/10 hover:bg-orange-500 text-white font-semibold rounded-full border border-orange-500/50 hover:border-orange-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 flex items-center gap-2 group">
                 <span className="group-hover:-translate-y-1 transition-transform duration-300">📄</span> 
                 Get Resume
