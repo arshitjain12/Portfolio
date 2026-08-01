@@ -434,7 +434,7 @@ const experiences = [
   {
     title: "Freelance MERN Stack Developer",
     company: "Indore (Contract-Based)",
-    duration: "Apr 2026 – Jun 2026",
+    duration: "Apr 2026 – July 2026",
     desc: "Built and modified reusable UI components, improving code maintainability and development speed. Integrated RESTful APIs and implemented frontend-backend communication for dynamic data handling. Resolved application bugs and performance issues, improving stability and user experience. Assisted in maintaining Node.js and Express.js backend modules and API endpoints.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "REST API","GitHub"],
     color: "from-violet-600 to-indigo-600",
@@ -705,7 +705,6 @@ that are fast, scalable, and built to last."
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center" style={{ position: "relative", zIndex: 1 }}>
           {[
             { label: "Projects Built", end: 3, suffix: "+" },
-            { label: "Months Internship", end: 2, suffix: "" },
             { label: "Tech Skills", end: 14, suffix: "+" },
             { label: "Year of Passion", end: 1, suffix: "" },
           ].map((s, i) => (
@@ -790,7 +789,7 @@ that are fast, scalable, and built to last."
                   {[
                     { year: "2023", title: "B.Com (Taxation)", sub: "Bhopal School of Social Science, M.P." },
                     { year: "2025", title: "Full Stack Web Dev Certification", sub: "Apna College" },
-                    { year: "2026", title: "Internship @ Zecdata", sub: "React.js & Node.js Developer" },
+                    // { year: "2026", title: "Internship @ Zecdata", sub: "React.js & Node.js Developer" },
                   ].map((edu, i) => (
                     <div key={edu.year} className="relative pl-4 group"
                       style={{ opacity: aboutIn ? 1 : 0, transform: aboutIn ? "translateX(0)" : "translateX(-20px)", transition: `all 0.5s ease ${1500 + i * 150}ms` }}>
@@ -836,20 +835,30 @@ that are fast, scalable, and built to last."
               <div className="mt-8 p-4 bg-orange-500/10 border border-orange-500/30 rounded-xl hover:border-orange-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 group"
                 style={{ opacity: skillsIn ? 1 : 0, transform: skillsIn ? "translateY(0)" : "translateY(20px)", transition: "all 0.6s ease 0.9s" }}>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl group-hover:rotate-12 transition-transform duration-300 inline-block">🏢</span>
+                  <span className="text-2xl group-hover:rotate-12 transition-transform duration-300 inline-block"></span>
                   <div>
                     <p className="text-orange-400 font-semibold text-sm">Internship @ Zecdata</p>
-                    <p className="text-gray-400 text-xs">React.js & Node.js Developer · 2 Months (2026)</p>
+                    <p className="text-gray-400 text-xs">React.js & Node.js Developer</p>
                   </div>
                 </div>
               </div>
               <div className="mt-3 p-4 bg-violet-500/10 border border-violet-500/30 rounded-xl hover:border-violet-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10 group"
                 style={{ opacity: skillsIn ? 1 : 0, transform: skillsIn ? "translateY(0)" : "translateY(20px)", transition: "all 0.6s ease 1.0s" }}>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl group-hover:rotate-12 transition-transform duration-300 inline-block">🎓</span>
+                  <span className="text-2xl group-hover:rotate-12 transition-transform duration-300 inline-block"></span>
                   <div>
                     <p className="text-violet-400 font-semibold text-sm">Full Stack Certification</p>
                     <p className="text-gray-400 text-xs">Apna College · 2025</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-3 p-4 bg-teal-500/10 border border-teal-500/30 rounded-xl hover:border-teal-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10 group"
+                style={{ opacity: skillsIn ? 1 : 0, transform: skillsIn ? "translateY(0)" : "translateY(20px)", transition: "all 0.6s ease 1.1s" }}>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl group-hover:rotate-12 transition-transform duration-300 inline-block"></span>
+                  <div>
+                    <p className="text-teal-400 font-semibold text-sm">Freelance MERN Stack Developer</p>
+                    <p className="text-gray-400 text-xs">Contract-Based · Indore</p>
                   </div>
                 </div>
               </div>
