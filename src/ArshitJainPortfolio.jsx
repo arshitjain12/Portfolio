@@ -508,7 +508,7 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <span className="text-2xl font-bold text-orange-500 tracking-wider cursor-pointer"
             onClick={() => scrollTo("home")} style={{ animation: "fadeInLeft 0.8s ease both" }}>
-            MERN-STACK<span className="text-white"> DEVELOPER</span>
+            Full-STACK<span className="text-white"> DEVELOPER</span>
           </span>
           <ul className="hidden md:flex gap-8">
             {navItems.map((s, i) => (
@@ -611,7 +611,7 @@ that are fast, scalable, and built to last."
                 <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
                 View Projects
               </button>
-              <a href="/Arshit_Jain_Resume.pdf" download="Arshit_Jain_Resume.pdf"
+              <a href="/Arshit_Jain_Resume_f.pdf" download="Arshit_Jain_Resume.pdf"
                 className="px-8 py-3 bg-white/10 hover:bg-orange-500 text-white font-semibold rounded-full border border-orange-500/50 hover:border-orange-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 flex items-center gap-2 group">
                 <span className="group-hover:-translate-y-1 transition-transform duration-300">📄</span> 
                 Get Resume
@@ -758,7 +758,7 @@ that are fast, scalable, and built to last."
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
            <AnimatedParagraph
-             text="I am a self-taught MERN Stack Developer who builds scalable, production-ready web applications using MongoDB, Express.js, React.js, and Node.js. I have worked as a Frontend Developer Intern at ZecData and as a Freelance Developer, contributing to live projects."
+             text="I am a self-taught Full Stack Developer who builds scalable, production-ready web applications using MongoDB, Express.js, React.js, and Node.js. I have worked as a Frontend Developer Intern at ZecData and as a Freelance Developer, contributing to live projects."
              inView={aboutIn} delay={200}
              className="text-gray-300 leading-relaxed mb-6 text-lg" />
             <AnimatedParagraph
@@ -1090,7 +1090,7 @@ that are fast, scalable, and built to last."
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <AnimatedParagraph
-                text="Let’s Build Something Together I’m a MERN Stack Developer passionate about building scalable and user-friendly web applications. If you have a project, idea, or job opportunity  feel free to reach out. I love to collaborate and create something amazing."
+                text="Let’s Build Something Together I am a Full Stack Developer passionate about building scalable and user-friendly web applications. If you have a project, idea, or job opportunity  feel free to reach out. I love to collaborate and create something amazing."
                 inView={contactIn} delay={300}
                 className="text-gray-300 text-lg leading-relaxed mb-8" />
               <div className="space-y-4">
